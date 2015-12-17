@@ -22,6 +22,7 @@ namespace LoanBroker
         [WebMethod]
         public void StartLoanRequest(double amount, int lånetid, string SSN)
         {
+
             sendMessage("credit_exchange", amount + "&&" + lånetid + "&&" + SSN, amount + "&&" + lånetid + "&&" + SSN);
 
 
