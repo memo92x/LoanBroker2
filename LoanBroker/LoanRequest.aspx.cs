@@ -22,7 +22,7 @@ namespace LoanBroker
 
             //       int creditScore = creditService.creditScore(CPR);
 
-            LoanRequestService lrs = new LoanRequestService();
+            LoanRequestService1.LoanRequestServiceSoapClient lrs = new LoanRequestService1.LoanRequestServiceSoapClient();
             lrs.StartLoanRequest(amount, loanDuration, CPR);
         }
     }

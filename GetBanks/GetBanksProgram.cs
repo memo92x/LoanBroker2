@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GetBanks
 {
-    class Program
+    class GetBanksProgram
     {
         static void Main(string[] args)
         {
