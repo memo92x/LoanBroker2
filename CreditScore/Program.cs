@@ -14,7 +14,7 @@ namespace CreditScore
         {
             ConnectionFactory factory = new ConnectionFactory()
             {
-
+                //commit
                 HostName = "datdb.cphbusiness.dk",
                 Port = 5672,
                 UserName = "student",
