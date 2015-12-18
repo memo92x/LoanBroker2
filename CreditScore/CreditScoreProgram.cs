@@ -1,5 +1,6 @@
 ﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using ServiceLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +44,10 @@ namespace CreditScore
                     // start
                     CreditService.CreditScoreServiceClient creditService = new CreditService.CreditScoreServiceClient();
                     int creditScore = creditService.creditScore(ssn);
-                    
+
+                    Control c = new Control();
+                    c.sendMessage("banks_exchange", ssn + "&" + duration + "&" + amount + "&" + creditScore, ssn + "&" + duration + "&" + amount + "&" + creditScore);
+
                     Console.WriteLine(" [x] Received {0}", creditScore + "SSN: " + ssn + "Duration: "+ duration + "Amount: " + amount);
                 };
                 channel.BasicConsume(queue: "credit_queue", noAck: true, consumer: consumer);
